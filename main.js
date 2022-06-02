@@ -14,7 +14,7 @@ function createWindow() {
 
   // and load the index.html of the app.
   mainWindow.loadURL("http://localhost:3000");
-
+  // mainWindow.removeMenu();
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 }
@@ -24,7 +24,7 @@ function createWindow() {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   createWindow();
-
+  mainWindow.webContents.openDevTools();
   app.on("activate", function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
